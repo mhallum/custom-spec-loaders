@@ -1,1 +1,6 @@
 .venv
+.pytest_cache
+tests/__pycache__
+src/specloaders/__pycache__
+src/specloaders/loaders/__pycache__
+.vscode
