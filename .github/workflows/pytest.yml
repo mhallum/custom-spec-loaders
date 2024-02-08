@@ -1,0 +1,46 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Tests
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "tests"
+  tests:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Python ${{ matrix.python-version }} Environment Setup 
+        # You may pin to the exact commit or the version.
+        # uses: Qwerty-133/python-setup@83c0c1e4305a802934ae2bf9f150a4a261c16b90
+        uses: Qwerty-133/python-setup@v1.0.1
+        with:
+          # Python version to use
+          python-version: ${{ matrix.python-version }}
+          # Whether to cache the Poetry installation, dependencies and pre-commit
+          use-cache: true # optional, default is true
+          # Whether to skip installing pre-commit
+          skip-pre-commit: # optional
+
+      - name: Run Tests
+        run: poetry run pytest --cov
+      
