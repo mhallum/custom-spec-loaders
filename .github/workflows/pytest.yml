@@ -41,6 +41,9 @@ jobs:
           # Whether to skip installing pre-commit
           skip-pre-commit: # optional
 
+      - name: test location
+        run: ls
+
       - name: Run Tests
         run: poetry run pytest --cov .
       
