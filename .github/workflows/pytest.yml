@@ -45,5 +45,5 @@ jobs:
         run: ls
 
       - name: Run Tests
-        run: poetry run pytest --cov .
+        run:  poetry run pytest --cov=specloaders  tests/
       
