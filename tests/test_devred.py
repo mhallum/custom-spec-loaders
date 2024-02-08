@@ -4,7 +4,7 @@
 
 from specutils import Spectrum1D
 
-from specloaders.loaders import devred_loader
+from specloaders import devred_loader
 
 TEST_SPEC_FILENAME = "tests/data/test_devred_spec.dat"
 EXPECTED_PARAMETERS = {
@@ -55,7 +55,9 @@ def test_force_increasing():
     assert len(spectrum.spectral_axis) == EXPECTED_PARAMETERS["n_points"]
     assert spectrum.spectral_axis.unit == EXPECTED_PARAMETERS["wave_units"]
     assert spectrum.flux.unit == EXPECTED_PARAMETERS["flux_units"]
-    assert spectrum.spectral_axis[-1].value == EXPECTED_PARAMETERS["wave_first"]
+    assert (
+        spectrum.spectral_axis[-1].value == EXPECTED_PARAMETERS["wave_first"]
+    )
     assert spectrum.spectral_axis[0].value == EXPECTED_PARAMETERS["wave_last"]
     assert spectrum.flux[-1].value == EXPECTED_PARAMETERS["flux_first"]
     assert spectrum.flux[0].value == EXPECTED_PARAMETERS["flux_last"]

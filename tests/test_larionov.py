@@ -3,7 +3,7 @@
 import pytest
 from specutils import Spectrum1D
 
-from specloaders.loaders import larionov_loader
+from specloaders import larionov_loader
 
 TEST_SPEC_FILENAME = "tests/data/test_larionov_spec.dat"
 EXPECTED_PARAMETERS = {
@@ -25,8 +25,12 @@ def test_loading_function():
     assert spectrum.flux.unit == EXPECTED_PARAMETERS["flux_units"]
     assert spectrum.spectral_axis[0].value == EXPECTED_PARAMETERS["wave_first"]
     assert spectrum.spectral_axis[-1].value == EXPECTED_PARAMETERS["wave_last"]
-    assert spectrum.flux[0].value == pytest.approx(EXPECTED_PARAMETERS["flux_first"])
-    assert spectrum.flux[-1].value == pytest.approx(EXPECTED_PARAMETERS["flux_last"])
+    assert spectrum.flux[0].value == pytest.approx(
+        EXPECTED_PARAMETERS["flux_first"]
+    )
+    assert spectrum.flux[-1].value == pytest.approx(
+        EXPECTED_PARAMETERS["flux_last"]
+    )
 
 
 def test_loader():
@@ -40,8 +44,12 @@ def test_loader():
     assert spectrum.flux.unit == EXPECTED_PARAMETERS["flux_units"]
     assert spectrum.spectral_axis[0].value == EXPECTED_PARAMETERS["wave_first"]
     assert spectrum.spectral_axis[-1].value == EXPECTED_PARAMETERS["wave_last"]
-    assert spectrum.flux[0].value == pytest.approx(EXPECTED_PARAMETERS["flux_first"])
-    assert spectrum.flux[-1].value == pytest.approx(EXPECTED_PARAMETERS["flux_last"])
+    assert spectrum.flux[0].value == pytest.approx(
+        EXPECTED_PARAMETERS["flux_first"]
+    )
+    assert spectrum.flux[-1].value == pytest.approx(
+        EXPECTED_PARAMETERS["flux_last"]
+    )
 
 
 def test_force_increasing():
@@ -54,7 +62,13 @@ def test_force_increasing():
     assert len(spectrum.spectral_axis) == EXPECTED_PARAMETERS["n_points"]
     assert spectrum.spectral_axis.unit == EXPECTED_PARAMETERS["wave_units"]
     assert spectrum.flux.unit == EXPECTED_PARAMETERS["flux_units"]
-    assert spectrum.spectral_axis[-1].value == EXPECTED_PARAMETERS["wave_first"]
+    assert (
+        spectrum.spectral_axis[-1].value == EXPECTED_PARAMETERS["wave_first"]
+    )
     assert spectrum.spectral_axis[0].value == EXPECTED_PARAMETERS["wave_last"]
-    assert spectrum.flux[-1].value == pytest.approx(EXPECTED_PARAMETERS["flux_first"])
-    assert spectrum.flux[0].value == pytest.approx(EXPECTED_PARAMETERS["flux_last"])
+    assert spectrum.flux[-1].value == pytest.approx(
+        EXPECTED_PARAMETERS["flux_first"]
+    )
+    assert spectrum.flux[0].value == pytest.approx(
+        EXPECTED_PARAMETERS["flux_last"]
+    )
