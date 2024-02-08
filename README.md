@@ -50,7 +50,7 @@ Use this loader to load a spectrum form a file produced by my devred program.
 
 This is basicaly a `.dat` file with two columns. The first column is the
 wavelength in Angstroms and the second column is the flux in units of
-$\mathrm{erg} ~ \mathrm{s}^{-1} ~ \mathrm{cm}^{-1} ~ \unicode{x212B}^{-1}$. Note that the flux is converted to units of $10^{-15} ~ \mathrm{erg} ~ \mathrm{s}^{-1} ~ \mathrm{cm}^{-1} ~ \unicode{x212B}^{-1}$ when loaded.
+$\mathrm{erg} ~ \mathrm{s}^{-1} ~ \mathrm{cm}^{-1} ~ \mathring A^{-1}$. Note that the flux is converted to units of $10^{-15} ~ \mathrm{erg} ~ \mathrm{s}^{-1} ~ \mathrm{cm}^{-1} ~ \mathring A^{-1}$ when loaded.
 
 > [!WARNING]
 > This loader assumes that the first line of the file is the header. If your file does not contain a header, the first line of the file will be ignored.
@@ -61,4 +61,4 @@ Use this loader Load a spectrum from a file produced by an IDL program written b
 
 This is basicaly a `.dat` file with two columns. The first column is the
 wavelength in Angstroms and the second column is the flux in units of
-$\mathrm{erg} ~ \mathrm{s}^{-1} ~ \mathrm{cm}^{-1} ~ \unicode{x212B}^{-1}$. Note that the flux is converted to units of $10^{-15} ~ \mathrm{erg} ~ \mathrm{s}^{-1} ~ \mathrm{cm}^{-1} ~ \unicode{x212B}^{-1}$ when loaded.
+$\mathrm{erg} ~ \mathrm{s}^{-1} ~ \mathrm{cm}^{-1} ~ \mathring A^{-1}$. Note that the flux is converted to units of $10^{-15} ~ \mathrm{erg} ~ \mathrm{s}^{-1} ~ \mathrm{cm}^{-1} ~ \mathring A^{-1}$ when loaded.
