@@ -5,3 +5,4 @@ src/specloaders/__pycache__
 src/specloaders/loaders/__pycache__
 .vscode
 .coverage
+.DS_Store

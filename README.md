@@ -57,7 +57,7 @@ $\mathrm{erg} ~ \mathrm{s}^{-1} ~ \mathrm{cm}^{-1} ~ \mathring A^{-1}$. Note tha
 
 ### larionov
 
-Use this loader Load a spectrum from a file produced by an IDL program written by Valeri M. Larionov.
+Use this loader to load a spectrum from a file produced by an IDL program written by Valeri M. Larionov.
 
 This is basicaly a `.dat` file with two columns. The first column is the
 wavelength in Angstroms and the second column is the flux in units of
